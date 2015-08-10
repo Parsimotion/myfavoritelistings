@@ -2,7 +2,7 @@
 
 angular.module('publicacionesFavoritasApp')
   .service('Listing', function Listing($resource) {
-    return $resource('https://api.mercadolibre.com/sites/MLA/search?category=MLA1648',null,{
+    var Listing = $resource('https://api.mercadolibre.com/sites/MLA/search',null,{
       search: {
         method: 'GET',
         interceptor: {
@@ -12,4 +12,5 @@ angular.module('publicacionesFavoritasApp')
         }
       }
     });
+    return Listing.bind({category: 'MLA1648'})
   });
