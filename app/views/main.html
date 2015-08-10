@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="row">
+    <div class="col-xs-7">
+      <h3 class="text-muted">mis publicaciones favoritas</h3>
+    </div>
+    <div class="col-xs-5">
+      <form ng-submit="search()">
+        <div class="form-group">
+          <input type="text" class="form-control" id="search" placeholder="Buscar" ng-model="text">
+          <input type="submit" class="hidden">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<ul class="items-list">
+  <li class="item" ng-repeat="listing in listings">
+    <div class="item-image">
+      <img ng-src="{{ listing.thumbnail }}" alt="...">
+    </div>
+    <div class="item-body">
+      <span class="glyphicon glyphicon-heart" ng-class="{favorited: listing.favorited}" ng-click="listing.favorited = !listing.favorited"></span><a ng-href="{{ listing.permalink }}" target="_blank"><h5 class="item-heading">{{ listing.title }}</h5></a>
+    </div>
+  </li>
+</ul>
+
+<div class="footer">
+  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+</div>
