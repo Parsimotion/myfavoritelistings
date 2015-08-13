@@ -19,7 +19,7 @@
       <img ng-src="{{ listing.thumbnail }}" alt="...">
     </div>
     <div class="item-body">
-      <span class="glyphicon glyphicon-heart" ng-class="{favorited: listing.favorited}" ng-click="listing.favorited = !listing.favorited"></span><a ng-href="{{ listing.permalink }}" target="_blank"><h5 class="item-heading">{{ listing.title }}</h5></a>
+      <span class="glyphicon glyphicon-heart" ng-class="{favorited: isFavourite(listing.id)}" ng-click="update(listing.id)"></span><a ng-href="{{ listing.permalink }}" target="_blank"><h5 class="item-heading">{{ listing.title }}</h5></a>
     </div>
   </li>
 </ul>
